@@ -1,0 +1,11 @@
+node_modules/
+web/dist/
+# Generated situation briefs are runtime artifacts.
+data/briefs/*.md
+!data/briefs/.gitkeep
+# Documents uploaded at runtime (standalone reports) are not part of the seed data.
+data/notes/DOC-*.md
+.DS_Store
+*.log
+# Local editor / tooling config
+.claude/

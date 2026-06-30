@@ -194,11 +194,8 @@ Don't assume a model supports function-calling just because it can chat — veri
 
 ## What I'd take from this if you're building your own
 
-- **Put correctness logic in the tool, not the prompt.** Date math, filtering guarantees, "don't re-filter this" instructions — anything you can compute or assert deterministically, do it in the tool response rather than hoping the model gets it right.
-- **Run the MCP server as a real separate process**, even in a single-laptop app. It's a small amount of plumbing for a hard architectural guarantee: there's no path from model to data that doesn't cross the protocol boundary.
-- **Route UI data-fetching through the same tool-call path the model uses.** It's tempting to add a "fast" direct-read endpoint for the UI. Don't — it quietly breaks the provenance guarantee that makes the whole thing auditable.
+- **Put correctness logic in the tool, not the prompt.** Date math, filtering guarantees, "don't re-filter this" instructions — anything you can compute or assert deterministically, do it in the tool response rather than hoping the model gets it right. This matters even more on small local models, which need an explicit, prescriptive system prompt and can't be assumed to support tool-calling at all — verify per model and fail loudly when it's missing.
+- **Run the MCP server as a real separate process, and route every consumer through it** — including the UI's own data-fetching endpoints, not just the model's. It's a small amount of plumbing for a hard architectural guarantee: there's no path to data, for the model or the UI, that skips the protocol boundary. That's what makes the provenance feature trustworthy rather than decorative.
 - **Use whole-turn SSE events, not token streaming**, if your actual UI need is "show me what's happening," not "show me text appearing character by character." It's simpler on both ends and pairs naturally with structured tool-call events.
-- **Write an explicit, prescriptive system prompt** if you're targeting small local models. Tool-calling reliability on a 4-9GB model is a real constraint; don't assume GPT-4-era prompting habits transfer.
-- **Verify tool-calling support per model, and fail loudly when it's missing.** Not every locally-served model implements function-calling; auto-detect what's installed and refuse gracefully rather than silently degrading to a model that can't use your tools at all.
 
 The full source is in [`sovereign-aid-assistant`](https://github.com/martinoyovo/sovereign-aid-assistant) — MIT licensed, runs with `npm install && npm run dev`, and works completely offline once the models are pulled.

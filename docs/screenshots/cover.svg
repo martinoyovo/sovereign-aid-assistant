@@ -1,97 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1456 816" font-family="'Inter',-apple-system,'Segoe UI',Roboto,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Inter',-apple-system,'Segoe UI',Roboto,sans-serif">
   <defs>
     <marker id="cov-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1F4F80"/>
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="1456" height="816" fill="#F4F6F8"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#F4F6F8"/>
 
-  <!-- subtle corner accents -->
-  <circle cx="1456" cy="0" r="460" fill="#E7F4EC"/>
-  <circle cx="1456" cy="816" r="360" fill="#EDEAF6"/>
-  <rect x="0" y="0" width="1456" height="816" fill="#F4F6F8" opacity="0.84"/>
+  <g transform="translate(38,0) scale(0.7721)">
+    <!-- subtle corner accents -->
+    <circle cx="1456" cy="0" r="460" fill="#E7F4EC"/>
+    <circle cx="1456" cy="816" r="360" fill="#EDEAF6"/>
+    <rect x="0" y="0" width="1456" height="816" fill="#F4F6F8" opacity="0.84"/>
 
-  <!-- offline badge, top -->
-  <g>
-    <rect x="100" y="96" width="252" height="44" rx="22" fill="#3FA46A"/>
-    <circle cx="130" cy="118" r="6" fill="#FFFFFF"/>
-    <text x="146" y="123" font-size="17" fill="#FFFFFF" font-weight="600">no network egress</text>
-  </g>
-
-  <!-- title -->
-  <text x="100" y="260" font-size="64" fill="#1C2733" font-weight="800">Sovereign AI</text>
-  <text x="100" y="330" font-size="40" fill="#1F4F80" font-weight="700">a local LLM, sensitive data,</text>
-  <text x="100" y="378" font-size="40" fill="#1F4F80" font-weight="700">and nowhere for either to leak</text>
-
-  <text x="100" y="430" font-size="20" fill="#4A5568">How the Sovereign Aid Assistant gives an offline model real,</text>
-  <text x="100" y="458" font-size="20" fill="#4A5568">auditable access to NGO case data, built on MCP.</text>
-
-  <text x="100" y="700" font-size="18" fill="#6B7785">Demoed at Open Source Week Community Day, AI track</text>
-  <text x="100" y="760" font-size="16" fill="#1F4F80" font-weight="700">sovereign-aid-assistant</text>
-
-  <!-- ============== right-side illustration ============== -->
-  <g>
-    <!-- cloud with a slash: no cloud dependency -->
-    <g transform="translate(1160,110)">
-      <path d="M10,46 a26,26 0 0 1 8,-50 a34,34 0 0 1 64,4 a24,24 0 0 1 -2,46 z"
-            fill="#FFFFFF" stroke="#9AAEC2" stroke-width="4"/>
-      <line x1="-6" y1="-6" x2="92" y2="64" stroke="#C0392B" stroke-width="6" stroke-linecap="round"/>
+    <!-- offline badge, top -->
+    <g>
+      <rect x="100" y="96" width="252" height="44" rx="22" fill="#3FA46A"/>
+      <circle cx="130" cy="118" r="6" fill="#FFFFFF"/>
+      <text x="146" y="123" font-size="17" fill="#FFFFFF" font-weight="600">no network egress</text>
     </g>
 
-    <!-- floating field-note card, upper right -->
-    <g transform="translate(1175,210) rotate(6)">
-      <rect x="0" y="0" width="170" height="118" rx="14" fill="#FFFFFF" stroke="#5B4B9C" stroke-width="3"/>
-      <rect x="20" y="22" width="90" height="10" rx="5" fill="#5B4B9C"/>
-      <rect x="20" y="46" width="130" height="8" rx="4" fill="#D6D0EC"/>
-      <rect x="20" y="64" width="130" height="8" rx="4" fill="#D6D0EC"/>
-      <rect x="20" y="82" width="80" height="8" rx="4" fill="#D6D0EC"/>
+    <!-- title -->
+    <text x="100" y="260" font-size="64" fill="#1C2733" font-weight="800">Sovereign AI</text>
+    <text x="100" y="330" font-size="40" fill="#1F4F80" font-weight="700">a local LLM, sensitive data,</text>
+    <text x="100" y="378" font-size="40" fill="#1F4F80" font-weight="700">and nowhere for either to leak</text>
+
+    <text x="100" y="430" font-size="20" fill="#4A5568">How the Sovereign Aid Assistant gives an offline model real,</text>
+    <text x="100" y="458" font-size="20" fill="#4A5568">auditable access to NGO case data, built on MCP.</text>
+
+    <text x="100" y="700" font-size="18" fill="#6B7785">Demoed at Open Source Week Community Day, AI track</text>
+    <text x="100" y="760" font-size="16" fill="#1F4F80" font-weight="700">sovereign-aid-assistant</text>
+
+    <!-- ============== right-side illustration ============== -->
+    <g>
+      <!-- cloud with a slash: no cloud dependency -->
+      <g transform="translate(1160,110)">
+        <path d="M10,46 a26,26 0 0 1 8,-50 a34,34 0 0 1 64,4 a24,24 0 0 1 -2,46 z"
+              fill="#FFFFFF" stroke="#9AAEC2" stroke-width="4"/>
+        <line x1="-6" y1="-6" x2="92" y2="64" stroke="#C0392B" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <!-- floating field-note card, upper right -->
+      <g transform="translate(1175,210) rotate(6)">
+        <rect x="0" y="0" width="170" height="118" rx="14" fill="#FFFFFF" stroke="#5B4B9C" stroke-width="3"/>
+        <rect x="20" y="22" width="90" height="10" rx="5" fill="#5B4B9C"/>
+        <rect x="20" y="46" width="130" height="8" rx="4" fill="#D6D0EC"/>
+        <rect x="20" y="64" width="130" height="8" rx="4" fill="#D6D0EC"/>
+        <rect x="20" y="82" width="80" height="8" rx="4" fill="#D6D0EC"/>
+      </g>
+
+      <!-- laptop body -->
+      <g transform="translate(860,300)">
+        <rect x="0" y="0" width="420" height="270" rx="18" fill="#1F4F80"/>
+        <rect x="16" y="16" width="388" height="238" rx="10" fill="#F4F6F8"/>
+
+        <!-- mock UI inside screen -->
+        <rect x="34" y="34" width="120" height="202" rx="8" fill="#FFFFFF" stroke="#D7DEE6" stroke-width="2"/>
+        <rect x="46" y="50" width="96" height="10" rx="5" fill="#1F4F80"/>
+        <rect x="46" y="72" width="80" height="8" rx="4" fill="#C7D6E8"/>
+        <rect x="46" y="90" width="80" height="8" rx="4" fill="#C7D6E8"/>
+        <rect x="46" y="108" width="60" height="8" rx="4" fill="#C7D6E8"/>
+
+        <rect x="166" y="34" width="220" height="202" rx="8" fill="#FFFFFF" stroke="#D7DEE6" stroke-width="2"/>
+        <rect x="182" y="50" width="120" height="10" rx="5" fill="#1C2733"/>
+        <rect x="182" y="74" width="188" height="8" rx="4" fill="#E3E8EE"/>
+        <rect x="182" y="90" width="188" height="8" rx="4" fill="#E3E8EE"/>
+        <rect x="182" y="106" width="140" height="8" rx="4" fill="#E3E8EE"/>
+        <rect x="182" y="130" width="188" height="46" rx="8" fill="#E7F4EC" stroke="#3FA46A" stroke-width="2"/>
+        <rect x="194" y="142" width="120" height="8" rx="4" fill="#2F7A4F"/>
+        <rect x="194" y="158" width="160" height="8" rx="4" fill="#2F7A4F"/>
+
+        <!-- laptop base -->
+        <path d="M-24,270 L444,270 L420,294 L0,294 Z" fill="#163A5E"/>
+      </g>
+
+      <!-- shield with check: trust / provenance -->
+      <g transform="translate(1190,470)">
+        <path d="M50,0 L96,18 V54 C96,90 74,112 50,124 C26,112 4,90 4,54 V18 Z" fill="#3FA46A"/>
+        <path d="M28,62 L44,78 L74,42" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- floating doc card lower left of laptop -->
+      <g transform="translate(840,560) rotate(-5)">
+        <rect x="0" y="0" width="150" height="100" rx="12" fill="#FFFFFF" stroke="#1F4F80" stroke-width="3"/>
+        <rect x="18" y="18" width="70" height="9" rx="4.5" fill="#1F4F80"/>
+        <rect x="18" y="40" width="114" height="7" rx="3.5" fill="#C7D6E8"/>
+        <rect x="18" y="56" width="114" height="7" rx="3.5" fill="#C7D6E8"/>
+        <rect x="18" y="72" width="80" height="7" rx="3.5" fill="#C7D6E8"/>
+      </g>
+
+      <!-- small decorative dots -->
+      <circle cx="1340" cy="430" r="6" fill="#3FA46A"/>
+      <circle cx="1370" cy="500" r="4" fill="#5B4B9C"/>
+      <circle cx="1300" cy="660" r="5" fill="#1F4F80"/>
+      <circle cx="1110" cy="700" r="4" fill="#3FA46A"/>
     </g>
-
-    <!-- laptop body -->
-    <g transform="translate(860,300)">
-      <rect x="0" y="0" width="420" height="270" rx="18" fill="#1F4F80"/>
-      <rect x="16" y="16" width="388" height="238" rx="10" fill="#F4F6F8"/>
-
-      <!-- mock UI inside screen -->
-      <rect x="34" y="34" width="120" height="202" rx="8" fill="#FFFFFF" stroke="#D7DEE6" stroke-width="2"/>
-      <rect x="46" y="50" width="96" height="10" rx="5" fill="#1F4F80"/>
-      <rect x="46" y="72" width="80" height="8" rx="4" fill="#C7D6E8"/>
-      <rect x="46" y="90" width="80" height="8" rx="4" fill="#C7D6E8"/>
-      <rect x="46" y="108" width="60" height="8" rx="4" fill="#C7D6E8"/>
-
-      <rect x="166" y="34" width="220" height="202" rx="8" fill="#FFFFFF" stroke="#D7DEE6" stroke-width="2"/>
-      <rect x="182" y="50" width="120" height="10" rx="5" fill="#1C2733"/>
-      <rect x="182" y="74" width="188" height="8" rx="4" fill="#E3E8EE"/>
-      <rect x="182" y="90" width="188" height="8" rx="4" fill="#E3E8EE"/>
-      <rect x="182" y="106" width="140" height="8" rx="4" fill="#E3E8EE"/>
-      <rect x="182" y="130" width="188" height="46" rx="8" fill="#E7F4EC" stroke="#3FA46A" stroke-width="2"/>
-      <rect x="194" y="142" width="120" height="8" rx="4" fill="#2F7A4F"/>
-      <rect x="194" y="158" width="160" height="8" rx="4" fill="#2F7A4F"/>
-
-      <!-- laptop base -->
-      <path d="M-24,270 L444,270 L420,294 L0,294 Z" fill="#163A5E"/>
-    </g>
-
-    <!-- shield with check: trust / provenance -->
-    <g transform="translate(1190,470)">
-      <path d="M50,0 L96,18 V54 C96,90 74,112 50,124 C26,112 4,90 4,54 V18 Z" fill="#3FA46A"/>
-      <path d="M28,62 L44,78 L74,42" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-
-    <!-- floating doc card lower left of laptop -->
-    <g transform="translate(840,560) rotate(-5)">
-      <rect x="0" y="0" width="150" height="100" rx="12" fill="#FFFFFF" stroke="#1F4F80" stroke-width="3"/>
-      <rect x="18" y="18" width="70" height="9" rx="4.5" fill="#1F4F80"/>
-      <rect x="18" y="40" width="114" height="7" rx="3.5" fill="#C7D6E8"/>
-      <rect x="18" y="56" width="114" height="7" rx="3.5" fill="#C7D6E8"/>
-      <rect x="18" y="72" width="80" height="7" rx="3.5" fill="#C7D6E8"/>
-    </g>
-
-    <!-- small decorative dots -->
-    <circle cx="1340" cy="430" r="6" fill="#3FA46A"/>
-    <circle cx="1370" cy="500" r="4" fill="#5B4B9C"/>
-    <circle cx="1300" cy="660" r="5" fill="#1F4F80"/>
-    <circle cx="1110" cy="700" r="4" fill="#3FA46A"/>
   </g>
 </svg>

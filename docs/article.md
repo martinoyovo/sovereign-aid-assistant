@@ -1,4 +1,4 @@
-# Building a Local-First AI Assistant with MCP: A Technical Deep Dive
+# Sovereign AI: Giving a Local LLM Real Access to Sensitive Data Without Sending It Anywhere
 
 I recently demoed the **Sovereign Aid Assistant** at Open Source Week Community Day, on the AI track. It's a fully offline AI assistant for NGO case data, and the live demo was the easy part to sell: a caseworker types a question in plain language, watches the agent search and reason over local files in real time, and gets an answer with every step traceable back to its source. The harder part to sell, and the actual point of the project, is what's *not* happening: nothing ever leaves the machine.
 

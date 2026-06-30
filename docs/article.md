@@ -157,6 +157,41 @@ It matches `tool_done` to the most recent not-yet-`done` step with the same name
 
 Every tool-call step and every caseId citation in the final answer is clickable, opening a slide-in panel with the full raw tool result or case record. That's the actual point of the whole architecture: a non-technical user can trace any claim in the answer back to the exact tool call and underlying record that produced it, with zero trust required in "the model said so."
 
+## 8. Running and configuring Ollama
+
+None of the architecture above matters if the local model layer is flaky, so it's worth being concrete about what running Ollama in this setup actually looks like.
+
+**Install and pull models.** Ollama installs as a background daemon and exposes an HTTP API on `localhost:11434` — that's the entire integration surface; there's no SDK lock-in, just `fetch`. Pull whatever tool-calling-capable models you want to support:
+
+```bash
+ollama pull qwen2.5   # ~4.7 GB, recommended primary — reliable tool-calling, fast on a laptop
+ollama pull gemma4    # ~9.6 GB, second model for testing model-swap
+```
+
+**Not every model can do this.** The whole app depends on Ollama's function-calling `tools` API, and not all locally-served models support it:
+
+| Model | Tool-calling | Notes |
+|-------|:---:|-------|
+| `qwen2.5` (~4.7 GB) | ✅ | Recommended primary; auto-selected as default. |
+| `gemma4` (~9.6 GB) | ✅ | Good model-swap partner, different vendor. |
+| `llama3.1` (~4.7 GB) | ✅ | Sends numeric tool args as strings; the tool layer coerces them. |
+| `gemma3` / `gemma2` | ❌ | No `tools` chat template in Ollama — fails with `"does not support tools"`. |
+
+Don't assume a model supports function-calling just because it can chat — verify against Ollama's model card, and fail loudly (not silently) when it doesn't. The backend lists whatever's installed via `ollama list`, auto-selects the most reliable option, and if a user manually picks a non-tool-capable model, the agent loop surfaces a clear error instead of the model hallucinating an answer with no tool calls at all.
+
+**Config is just env vars** — there's no config file or admin UI to build:
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `PORT` | `8000` | Backend / web port. |
+| `OLLAMA_HOST` | `http://localhost:11434` | Where the model runtime is listening. |
+| `DATA_DIR` | `./data` | Where case data lives — point this anywhere for a different dataset. |
+| `DEMO_TODAY` | fixed date | The reference "today" the date-math tools (e.g. `aidGapDays`) compute against — pinned so demos are deterministic instead of drifting with the calendar. |
+
+**Warm the model before the first request.** Ollama loads a model into RAM lazily on first use and unloads it after a few idle minutes, which means the very first question after startup eats a multi-second cold-load penalty. `warmup.ts` fires a throwaway 1-token completion against the default model as soon as the server starts, so that cost is paid once at boot instead of in front of the first real user.
+
+**Hardware is the whole point.** Two recommended models together are about 14 GB on disk; only one is resident in RAM at a time. This runs comfortably on a 32 GB laptop with no GPU requirement — the constraint to design around isn't compute, it's RAM headroom when a user swaps models live (briefly two models loaded at once during the swap). If you're targeting lower-spec hardware, pick a single smaller tool-calling model and skip the live model-swap demo feature entirely.
+
 ## What I'd take from this if you're building your own
 
 - **Put correctness logic in the tool, not the prompt.** Date math, filtering guarantees, "don't re-filter this" instructions — anything you can compute or assert deterministically, do it in the tool response rather than hoping the model gets it right.
@@ -164,5 +199,6 @@ Every tool-call step and every caseId citation in the final answer is clickable,
 - **Route UI data-fetching through the same tool-call path the model uses.** It's tempting to add a "fast" direct-read endpoint for the UI. Don't — it quietly breaks the provenance guarantee that makes the whole thing auditable.
 - **Use whole-turn SSE events, not token streaming**, if your actual UI need is "show me what's happening," not "show me text appearing character by character." It's simpler on both ends and pairs naturally with structured tool-call events.
 - **Write an explicit, prescriptive system prompt** if you're targeting small local models. Tool-calling reliability on a 4-9GB model is a real constraint; don't assume GPT-4-era prompting habits transfer.
+- **Verify tool-calling support per model, and fail loudly when it's missing.** Not every locally-served model implements function-calling; auto-detect what's installed and refuse gracefully rather than silently degrading to a model that can't use your tools at all.
 
 The full source is in [`sovereign-aid-assistant`](https://github.com/martinoyovo/sovereign-aid-assistant) — MIT licensed, runs with `npm install && npm run dev`, and works completely offline once the models are pulled.

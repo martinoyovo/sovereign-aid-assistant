@@ -14,7 +14,7 @@
     <text x="1182" y="51" font-size="17" fill="#1C2733">no network egress</text>
   </g>
 
-  <text x="40" y="56" font-size="24" fill="#1C2733" font-weight="bold">Sovereign Aid Assistant — request path</text>
+  <text x="40" y="56" font-size="24" fill="#1C2733" font-weight="bold">Sovereign Aid Assistant: request path</text>
 
   <!-- Row 1: Browser -->
   <g>
@@ -47,7 +47,7 @@
   <g>
     <rect x="980" y="110" width="260" height="80" rx="10" fill="#E7F4EC" stroke="#3FA46A" stroke-width="2"/>
     <text x="1110" y="143" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">Ollama</text>
-    <text x="1110" y="167" font-size="14" fill="#2F7A4F" text-anchor="middle">local model · localhost:11434</text>
+    <text x="1110" y="167" font-size="14" fill="#2F7A4F" text-anchor="middle">local model, localhost:11434</text>
   </g>
 
   <!-- vertical connector from Express down to MCP client -->
@@ -67,7 +67,7 @@
   <g>
     <rect x="680" y="286" width="300" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
     <text x="830" y="319" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">MCP server</text>
-    <text x="830" y="343" font-size="14" fill="#6B7785" text-anchor="middle">separate process · 7 tools</text>
+    <text x="830" y="343" font-size="14" fill="#6B7785" text-anchor="middle">separate process, 7 tools</text>
   </g>
 
   <!-- the tool boundary label -->

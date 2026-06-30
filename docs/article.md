@@ -6,6 +6,8 @@ I built it to answer a question I kept running into: can you give a local LLM re
 
 The answer turned out to be yes, and the Model Context Protocol (MCP) is the piece that makes it clean. This is a walkthrough of how it's actually built, past the demo, so you can build something similar.
 
+![Overview of the Sovereign Aid Assistant: local case data on the left, the ask box and answer in the center](screenshots/01-overview.png)
+
 The short version: a local model (served by [Ollama](https://ollama.com)) never touches data directly. Every fact it states comes through an MCP tool call. The MCP server runs as a genuinely separate process talking over stdio, and the UI streams every tool call live so you can audit exactly what the model saw before it answered.
 
 ```
@@ -138,6 +140,8 @@ The detail I'd call out as the real design discipline here: `/api/data` and `/ap
 
 `web/src/App.tsx` consumes the SSE stream and reconstructs a `liveSteps` array as events arrive:
 
+![Live tool calls streaming in as the agent works, spinner to green check with the result](screenshots/02-live-streaming.png)
+
 ```ts
 const r = await askStream(q, model, (evt) => {
   if (evt.type === "tool_start") {
@@ -160,6 +164,8 @@ const r = await askStream(q, model, (evt) => {
 It matches `tool_done` to the most recent not-yet-`done` step with the same name, rather than by index. That's necessary because the same tool can legitimately be called more than once in a single turn (`flag_case` per case, for example), and a naive index match would mis-pair them.
 
 Every tool-call step and every caseId citation in the final answer is clickable, opening a slide-in panel with the full raw tool result or case record. That's the actual point of the whole architecture: a non-technical user can trace any claim in the answer back to the exact tool call and underlying record that produced it, with zero trust required in "the model said so."
+
+![Provenance panel showing the raw data a tool call retrieved](screenshots/04-provenance-panel.png)
 
 ## 8. Running and configuring Ollama
 

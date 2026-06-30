@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F4F80"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="620" fill="#F4F6F8"/>
+
+  <!-- offline badge -->
+  <g>
+    <rect x="1140" y="24" width="220" height="44" rx="22" fill="#E7F4EC" stroke="#3FA46A" stroke-width="1.5"/>
+    <circle cx="1166" cy="46" r="6" fill="#3FA46A"/>
+    <text x="1182" y="51" font-size="17" fill="#1C2733">no network egress</text>
+  </g>
+
+  <text x="40" y="56" font-size="24" fill="#1C2733" font-weight="bold">Sovereign Aid Assistant — request path</text>
+
+  <!-- Row 1: Browser -->
+  <g>
+    <rect x="40" y="110" width="220" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
+    <text x="150" y="143" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">Browser</text>
+    <text x="150" y="167" font-size="14" fill="#6B7785" text-anchor="middle">React UI</text>
+  </g>
+
+  <line x1="260" y1="150" x2="334" y2="150" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Express backend -->
+  <g>
+    <rect x="340" y="110" width="260" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
+    <text x="470" y="143" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">Express backend</text>
+    <text x="470" y="167" font-size="14" fill="#6B7785" text-anchor="middle">one process, port 8000</text>
+  </g>
+
+  <line x1="600" y1="150" x2="674" y2="150" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Agent loop -->
+  <g>
+    <rect x="680" y="110" width="220" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
+    <text x="790" y="143" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">Agent loop</text>
+    <text x="790" y="167" font-size="14" fill="#6B7785" text-anchor="middle">tool-calling, max 5 turns</text>
+  </g>
+
+  <line x1="900" y1="150" x2="974" y2="150" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Ollama -->
+  <g>
+    <rect x="980" y="110" width="260" height="80" rx="10" fill="#E7F4EC" stroke="#3FA46A" stroke-width="2"/>
+    <text x="1110" y="143" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">Ollama</text>
+    <text x="1110" y="167" font-size="14" fill="#2F7A4F" text-anchor="middle">local model · localhost:11434</text>
+  </g>
+
+  <!-- vertical connector from Express down to MCP client -->
+  <line x1="470" y1="190" x2="470" y2="280" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="486" y="240" font-size="13" fill="#6B7785">spawns + connects</text>
+
+  <!-- Row 2: MCP client / server -->
+  <g>
+    <rect x="340" y="286" width="260" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="470" y="319" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">MCP client</text>
+    <text x="470" y="343" font-size="14" fill="#6B7785" text-anchor="middle">inside the backend</text>
+  </g>
+
+  <line x1="600" y1="326" x2="674" y2="326" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="610" y="312" font-size="13" fill="#6B7785">stdio</text>
+
+  <g>
+    <rect x="680" y="286" width="300" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
+    <text x="830" y="319" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">MCP server</text>
+    <text x="830" y="343" font-size="14" fill="#6B7785" text-anchor="middle">separate process · 7 tools</text>
+  </g>
+
+  <!-- the tool boundary label -->
+  <text x="990" y="326" font-size="14" fill="#1F4F80" font-style="italic">← the tool boundary</text>
+
+  <!-- vertical connector down to data -->
+  <line x1="830" y1="366" x2="830" y2="456" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Row 3: data -->
+  <g>
+    <rect x="680" y="462" width="300" height="80" rx="10" fill="#FFFFFF" stroke="#1F4F80" stroke-width="2"/>
+    <text x="830" y="495" font-size="18" fill="#1C2733" text-anchor="middle" font-weight="bold">/data</text>
+    <text x="830" y="519" font-size="14" fill="#6B7785" text-anchor="middle">local JSON + field notes</text>
+  </g>
+
+  <text x="40" y="600" font-size="14" fill="#6B7785">Every fact the model states crosses the dashed MCP boundary. Nothing in this diagram talks to the internet.</text>
+</svg>

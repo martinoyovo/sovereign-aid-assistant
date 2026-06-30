@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" font-family="'Inter',-apple-system,'Segoe UI',Roboto,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 570" font-family="'Inter',-apple-system,'Segoe UI',Roboto,sans-serif">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1F4F80"/>
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="1400" height="620" fill="#F4F6F8"/>
+  <rect x="0" y="0" width="1400" height="570" fill="#F4F6F8"/>
 
   <!-- offline badge -->
   <g>
@@ -82,6 +82,4 @@
     <text x="830" y="495" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="700">/data</text>
     <text x="830" y="519" font-size="14" fill="#C7D6E8" text-anchor="middle">local JSON + field notes</text>
   </g>
-
-  <text x="40" y="600" font-size="14" fill="#6B7785">Every fact the model states crosses the MCP boundary. Nothing in this diagram talks to the internet.</text>
 </svg>

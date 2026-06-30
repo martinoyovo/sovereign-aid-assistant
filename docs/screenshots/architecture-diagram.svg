@@ -71,7 +71,7 @@
   </g>
 
   <!-- the tool boundary label -->
-  <text x="990" y="326" font-size="14" fill="#1F4F80" font-style="italic">← the tool boundary</text>
+  <text x="1000" y="326" font-size="14" fill="#1F4F80" font-style="italic">the tool boundary</text>
 
   <!-- vertical connector down to data -->
   <line x1="830" y1="366" x2="830" y2="456" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>

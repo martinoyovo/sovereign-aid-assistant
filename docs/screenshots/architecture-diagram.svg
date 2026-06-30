@@ -3,6 +3,9 @@
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1F4F80"/>
     </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5B4B9C"/>
+    </marker>
   </defs>
 
   <rect x="0" y="0" width="1400" height="570" fill="#F4F6F8"/>
@@ -56,22 +59,22 @@
 
   <!-- Row 2: MCP client / server -->
   <g>
-    <rect x="340" y="286" width="260" height="80" rx="10" fill="#3A5C7D"/>
+    <rect x="340" y="286" width="260" height="80" rx="10" fill="#5B4B9C"/>
     <text x="470" y="319" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="700">MCP client</text>
-    <text x="470" y="343" font-size="14" fill="#D6E2EC" text-anchor="middle">inside the backend</text>
+    <text x="470" y="343" font-size="14" fill="#DCD6EE" text-anchor="middle">inside the backend</text>
   </g>
 
-  <line x1="600" y1="326" x2="674" y2="326" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="326" x2="674" y2="326" stroke="#5B4B9C" stroke-width="2" marker-end="url(#arrow-purple)"/>
   <text x="610" y="312" font-size="13" fill="#6B7785">stdio</text>
 
   <g>
-    <rect x="680" y="286" width="300" height="80" rx="10" fill="#1F4F80"/>
+    <rect x="680" y="286" width="300" height="80" rx="10" fill="#5B4B9C"/>
     <text x="830" y="319" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="700">MCP server</text>
-    <text x="830" y="343" font-size="14" fill="#C7D6E8" text-anchor="middle">separate process, 7 tools</text>
+    <text x="830" y="343" font-size="14" fill="#DCD6EE" text-anchor="middle">separate process, 7 tools</text>
   </g>
 
   <!-- the tool boundary label -->
-  <text x="1000" y="326" font-size="14" fill="#1F4F80" font-style="italic">the tool boundary</text>
+  <text x="1000" y="326" font-size="14" fill="#5B4B9C" font-style="italic">the tool boundary</text>
 
   <!-- vertical connector down to data -->
   <line x1="830" y1="366" x2="830" y2="456" stroke="#1F4F80" stroke-width="2" marker-end="url(#arrow)"/>

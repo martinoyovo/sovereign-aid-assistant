@@ -1,6 +1,10 @@
 # Building a Local-First AI Assistant with MCP: A Technical Deep Dive
 
-I built the **Sovereign Aid Assistant**, a fully offline AI assistant for NGO case data, to answer a question I kept running into: can you give a local LLM real, auditable access to sensitive data without ever sending that data off the machine? The answer is yes, and the Model Context Protocol (MCP) is the piece that makes it clean. Here's a walkthrough of how it's actually built, so you can build something similar.
+I recently demoed the **Sovereign Aid Assistant** at Open Source Week Community Day, on the AI track. It's a fully offline AI assistant for NGO case data, and the live demo was the easy part to sell: a caseworker types a question in plain language, watches the agent search and reason over local files in real time, and gets an answer with every step traceable back to its source. The harder part to sell, and the actual point of the project, is what's *not* happening: nothing ever leaves the machine.
+
+I built it to answer a question I kept running into: can you give a local LLM real, auditable access to sensitive data without ever sending that data off the machine? For an NGO holding case files on vulnerable people, that's not a nice-to-have, it's the whole requirement. Most "just plug in an AI assistant" advice assumes a cloud API is fine. It isn't, here. So the project became an exercise in building the opposite: an assistant that's genuinely useful and genuinely never phones home.
+
+The answer turned out to be yes, and the Model Context Protocol (MCP) is the piece that makes it clean. This is a walkthrough of how it's actually built, past the demo, so you can build something similar.
 
 The short version: a local model (served by [Ollama](https://ollama.com)) never touches data directly. Every fact it states comes through an MCP tool call. The MCP server runs as a genuinely separate process talking over stdio, and the UI streams every tool call live so you can audit exactly what the model saw before it answered.
 

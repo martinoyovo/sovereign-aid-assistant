@@ -9,9 +9,9 @@
 
   <!-- offline badge -->
   <g>
-    <rect x="1140" y="24" width="220" height="44" rx="22" fill="#E7F4EC" stroke="#3FA46A" stroke-width="1.5"/>
-    <circle cx="1166" cy="46" r="6" fill="#3FA46A"/>
-    <text x="1182" y="51" font-size="17" fill="#1C2733">no network egress</text>
+    <rect x="1116" y="24" width="252" height="44" rx="22" fill="#E7F4EC" stroke="#3FA46A" stroke-width="1.5"/>
+    <circle cx="1146" cy="46" r="6" fill="#3FA46A"/>
+    <text x="1162" y="51" font-size="17" fill="#1C2733">no network egress</text>
   </g>
 
   <text x="40" y="56" font-size="24" fill="#1C2733" font-weight="bold">Sovereign Aid Assistant: request path</text>

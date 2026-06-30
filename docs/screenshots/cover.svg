@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1456 816" font-family="'Inter',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="cov-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F4F80"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1456" height="816" fill="#F4F6F8"/>
+
+  <!-- subtle corner accent -->
+  <circle cx="1456" cy="0" r="420" fill="#E7F4EC"/>
+  <circle cx="0" cy="816" r="320" fill="#EDEAF6"/>
+  <rect x="0" y="0" width="1456" height="816" fill="#F4F6F8" opacity="0.86"/>
+
+  <!-- offline badge, top -->
+  <g>
+    <rect x="100" y="96" width="252" height="44" rx="22" fill="#3FA46A"/>
+    <circle cx="130" cy="118" r="6" fill="#FFFFFF"/>
+    <text x="146" y="123" font-size="17" fill="#FFFFFF" font-weight="600">no network egress</text>
+  </g>
+
+  <!-- title -->
+  <text x="100" y="260" font-size="64" fill="#1C2733" font-weight="800">Sovereign AI</text>
+  <text x="100" y="330" font-size="40" fill="#1F4F80" font-weight="700">a local LLM, sensitive data,</text>
+  <text x="100" y="378" font-size="40" fill="#1F4F80" font-weight="700">and nowhere for either to leak</text>
+
+  <text x="100" y="430" font-size="20" fill="#4A5568">How the Sovereign Aid Assistant gives an offline model real,</text>
+  <text x="100" y="458" font-size="20" fill="#4A5568">auditable access to NGO case data, built on MCP.</text>
+
+  <!-- mini architecture motif -->
+  <g>
+    <rect x="100" y="560" width="190" height="68" rx="10" fill="#1F4F80"/>
+    <text x="195" y="600" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700">Agent loop</text>
+
+    <line x1="290" y1="594" x2="344" y2="594" stroke="#1F4F80" stroke-width="2" marker-end="url(#cov-arrow)"/>
+
+    <rect x="350" y="560" width="190" height="68" rx="10" fill="#5B4B9C"/>
+    <text x="445" y="600" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700">MCP server</text>
+
+    <line x1="540" y1="594" x2="594" y2="594" stroke="#5B4B9C" stroke-width="2" marker-end="url(#cov-arrow)"/>
+
+    <rect x="600" y="560" width="190" height="68" rx="10" fill="#3FA46A"/>
+    <text x="695" y="600" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700">local data</text>
+  </g>
+
+  <text x="100" y="700" font-size="18" fill="#6B7785">Demoed at Open Source Week Community Day, AI track</text>
+
+  <!-- footer brand mark -->
+  <text x="100" y="760" font-size="16" fill="#1F4F80" font-weight="700">sovereign-aid-assistant</text>
+</svg>

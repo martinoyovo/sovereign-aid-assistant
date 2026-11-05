@@ -1,0 +1,11 @@
+# Example tutorial made by Ondaclip: replace it with real ones (New need)
+id: first-look
+account: demo
+title: {"en-US":"A first look"}
+steps:
+  - id: home
+    title: {"en-US":"The home page"}
+    start: /
+    shots:
+      - say: {"en-US":"This is the home page of the app. The next tutorials show its main screens."}
+        show: { css: "body" }

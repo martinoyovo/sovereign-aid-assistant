@@ -1,0 +1,7 @@
+chapters:
+  - number: 1
+    title: {"en-US":"Get started"}
+    tutorials:
+      - id: first-look
+        icon: home
+        description: {"en-US":"A first look at the app."}

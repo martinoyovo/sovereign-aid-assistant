@@ -1,0 +1,28 @@
+# Settings of the video tutorials of margin (Ondaclip).
+# Format: https://ondaclip.com/docs/configuration/ . Change it by pull request,
+# or from the studio (it opens the pull request). Never put a secret here:
+# demo accounts stay in Secret Manager.
+version: 1
+locales:
+  - en-US
+appEnvironment: dev
+devGuard:
+  envKey: TUTO_BASE_ENV
+  appHostPattern: ""
+apiPattern: /api/
+safeEmail: "@example\\.com$"
+signedOutPattern: /login
+voice: {}
+agent:
+  harness: agy
+cloud:
+  appUrl: null
+publish:
+  targets: {}
+freshness:
+  manifest: null
+products:
+  app:
+    name: margin
+    tutorials: tutorials
+    publication: publication.yaml

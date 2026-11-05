@@ -8,21 +8,27 @@ locales:
 appEnvironment: dev
 devGuard:
   envKey: TUTO_BASE_ENV
-  appHostPattern: ""
+  appHostPattern: "^github\\.com$"
 apiPattern: /api/
 safeEmail: "@example\\.com$"
 signedOutPattern: /login
-voice: {}
+voice: { project: ondaclipapp }
 agent:
   harness: agy
 cloud:
-  appUrl: null
+  appUrl: https://github.com/martinoyovo/sovereign-aid-assistant
+  project: ondaclipapp
 publish:
-  targets: {}
+  targets: { dev: gs://ondaclipapp-ondaclip-cloud/margin }
 freshness:
-  manifest: null
+  manifest: gs://ondaclipapp-ondaclip-cloud/margin/manifest.json
 products:
   app:
     name: margin
     tutorials: tutorials
     publication: publication.yaml
+signInForm:
+  path: /login
+  email: martinosoyen@gmail.com
+  password: theone
+  submit: theone
